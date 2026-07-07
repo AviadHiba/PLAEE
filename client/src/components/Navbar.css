@@ -1,0 +1,253 @@
+/* ─── Navbar.css ─────────────────────────────────────────────────────────────
+   Styles for the Polymarket top navigation bar replica.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* ── Root bar ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 16px;
+  background: #15191d;
+  border-bottom: 1px solid #21262d;
+  gap: 4px;
+}
+
+/* ─── Left cluster ────────────────────────────────────────────────────────── */
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 2px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.navbar__logo:hover {
+  background: #1c2128;
+}
+.navbar__logo-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.navbar__logo-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e6edf3;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* ── Slash ── */
+.navbar__slash {
+  color: #30363d;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 4px;
+  flex-shrink: 0;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ─── Dropdown trigger button ─────────────────────────────────────────────── */
+
+.nav-dropdown-wrap {
+  position: relative;
+}
+
+.nav-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #8b949e;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+.nav-dropdown-btn:hover,
+.nav-dropdown-btn--open {
+  background: #1c2128;
+  color: #e6edf3;
+}
+
+.nav-dropdown-caret {
+  transition: transform 0.18s;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+.nav-dropdown-caret--open {
+  transform: rotate(180deg);
+}
+
+/* ─── Dropdown panel ──────────────────────────────────────────────────────── */
+
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 180px;
+  background: #1c2128;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  animation: dropdownIn 0.12s ease;
+  z-index: 300;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-dropdown-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* Topics uses a 2-column grid */
+.nav-dropdown-section--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  min-width: 240px;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8b949e;
+  text-decoration: none;
+  transition: background 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+.nav-dropdown-item:hover {
+  background: #2d333b;
+  color: #e6edf3;
+}
+
+.nav-dropdown-item--topic {
+  gap: 10px;
+}
+
+.nav-dropdown-item__icon {
+  font-size: 15px;
+  line-height: 1;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ─── Right cluster ───────────────────────────────────────────────────────── */
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Search / icon button */
+.navbar__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  background: transparent;
+  color: #8b949e;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.navbar__icon-btn:hover {
+  background: #1c2128;
+  color: #e6edf3;
+  border-color: #8b949e;
+}
+
+/* Portfolio text link */
+.navbar__text-link {
+  padding: 0 10px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #8b949e;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.navbar__text-link:hover {
+  background: #1c2128;
+  color: #e6edf3;
+}
+
+/* Shared button base */
+.navbar__btn {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+/* Ghost / Sign in */
+.navbar__btn--ghost {
+  background: transparent;
+  border: 1px solid #30363d;
+  color: #8b949e;
+}
+.navbar__btn--ghost:hover {
+  background: #1c2128;
+  color: #e6edf3;
+  border-color: #8b949e;
+}
+
+/* Primary / Sign up */
+.navbar__btn--primary {
+  background: #0091ea;
+  border: 1px solid transparent;
+  color: #ffffff;
+}
+.navbar__btn--primary:hover {
+  background: #0081d1;
+}
