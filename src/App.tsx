@@ -3,6 +3,7 @@ import { EventCard } from "./components/EventCard";
 import type { SubMarket } from "./components/EventCard";
 import "./App.css";
 import getEvents from "./functions/getEvents";
+import logo from "./assets/logo-black.png";
  
 // ─── Types ────────────────────────────────────────────────────────────────────
  
@@ -75,7 +76,8 @@ export default function PolymarketPage() {
       {/* ── TOP NAV ── */}
       <header className="pm-nav" style={{width: '-webkit-fill-available'}}>
         <img className="pm-nav__logo"
-        src={"src/assets/logo-black.png"}
+        src={logo}
+        // src={"src/assets/logo-black.png"}
         alt="Logo"
         style={{maxBlockSize: '50%'}}
         />

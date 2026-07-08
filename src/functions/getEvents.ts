@@ -43,9 +43,9 @@ function mapMarket(market: PolymarketMarket): SubMarket {
   try {
     //   console.log({outcomes: market.outcomes})
       outcomes = JSON.parse(market.outcomes);
-      console.log({prices:market.outcomePrices})
+      // console.log({prices:market.outcomePrices})
       prices = JSON.parse(market.outcomePrices).map((price: string) => Number(price)*100);
-      console.log({outcomes,prices})
+      // console.log({outcomes,prices})
   } catch {
     // console.log('faild')
     return {
